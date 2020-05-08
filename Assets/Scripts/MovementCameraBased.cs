@@ -16,6 +16,13 @@ public class MovementCameraBased : MonoBehaviour
 
     Vector2 input;
 
+    private Rigidbody rb;
+
+    void Start ()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +41,8 @@ public class MovementCameraBased : MonoBehaviour
        camR = camR.normalized;
 
        accelerate(); 
-       transform.position += (camF*input.y + camR*input.x)*Time.deltaTime*speed; 
+       //transform.position += (camF*input.y + camR*input.x)*Time.deltaTime*speed;
+       rb.AddForce ((camF*input.y + camR*input.x)*Time.deltaTime*speed); 
     }
 
     public void accelerate()
