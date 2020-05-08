@@ -15,6 +15,6 @@ public class Movement : MonoBehaviour
     void Update()
     {
         transform.Translate(moveSpeed * Input.GetAxis("Horizontal")*Time.deltaTime,0f,moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
-        transform.Rotate(moveSpeed * Input.GetAxis("Horizontal")*Time.deltaTime,0f,moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
+        //transform.Rotate(moveSpeed * Input.GetAxis("Horizontal")*Time.deltaTime,0f,moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
     }
 }
